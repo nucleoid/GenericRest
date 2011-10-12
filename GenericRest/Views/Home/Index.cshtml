@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Message</h2>
+    Default dog owners (CIF):
+    <ul>
+        <li>abcdefg123</li>
+        <li>123abcdefg</li>
+        <li>abcdef1234</li>
+    </ul> 
+    Possible actions:
+    <ul>
+        <li>All dogs (GET): /{cif}/Dogs/</li>
+        <li>Dog by ID (GET): /{cif}/Dogs/{id}</li>
+        <li>Dogs by Owner (GET): /{cif}/Dogs/DogsByOwner</li>
+        <li>Breeds (GET): /{cif}/Dogs/Breeds</li>
+        <li>Create Dog (POST): /{cif}/Dogs/</li>
+        <li>Update Dog (PUT): /{cif}/Dogs/</li>
+        <li>Delete Dog (DELETE): /{cif}/Dogs/{id}</li>
+    </ul>
+    <p>Examples: @(Html.ActionLink<DogsController>(c => c.Index(1), "Dog #1", new {cif="00000000"})) or @(Html.ActionLink<DogsController>(c => c.Index(null), "All Dogs", new {cif="00000000"}))</p>
+    <p>Remember to use:<br/> Content-Type: application/json  <br />when using POST or PUT http methods. Otherwise it won't know how to bind the request body content</p>
+    <p>I recommend using <a href="http://www.fiddler2.com/fiddler2/version.asp">Fiddler</a> and/or the <a href="http://jsonview.com/">JSONView FireFox plugin</a> to properly play with the API</p>
